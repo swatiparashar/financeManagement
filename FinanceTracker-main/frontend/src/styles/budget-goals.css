@@ -1,0 +1,321 @@
+/* Budget Manager Styles */
+.budget-manager {
+  padding: 0;
+}
+
+.budget-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.budget-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.budget-header h4 {
+  color: #262626;
+  font-weight: 600;
+}
+
+.budget-progress {
+  margin-top: 16px;
+}
+
+.budget-card .ant-card-actions {
+  background: #fafafa;
+  border-top: 1px solid #f0f0f0;
+}
+
+.budget-card .ant-card-actions > li {
+  margin: 8px 0;
+}
+
+.budget-card .ant-card-actions > li > span {
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.budget-card .ant-card-actions > li > span:hover {
+  color: #1890ff;
+}
+
+/* Goals Manager Styles */
+.goals-manager {
+  padding: 0;
+}
+
+.goal-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.goal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.goal-card.completed {
+  position: relative;
+  overflow: hidden;
+}
+
+.goal-card.completed::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(82, 196, 26, 0.05) 0%, rgba(24, 144, 255, 0.05) 100%);
+  pointer-events: none;
+}
+
+.goal-header h4 {
+  color: #262626;
+  font-weight: 600;
+}
+
+.goal-progress {
+  margin-top: 16px;
+}
+
+.goal-card .ant-card-actions {
+  background: #fafafa;
+  border-top: 1px solid #f0f0f0;
+}
+
+.goal-card .ant-card-actions > li {
+  margin: 8px 0;
+}
+
+.goal-card .ant-card-actions > li > span {
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.goal-card .ant-card-actions > li > span:hover {
+  color: #1890ff;
+}
+
+/* Status Colors */
+.status-excellent {
+  color: #52c41a;
+}
+
+.status-good {
+  color: #1890ff;
+}
+
+.status-warning {
+  color: #faad14;
+}
+
+.status-exceeded {
+  color: #ff4d4f;
+}
+
+/* Progress Bar Customizations */
+.budget-card .ant-progress-bg,
+.goal-card .ant-progress-bg {
+  border-radius: 4px;
+}
+
+.budget-card .ant-progress-outer,
+.goal-card .ant-progress-outer {
+  padding-right: 0;
+}
+
+/* Modal Customizations */
+.ant-modal-header {
+  border-radius: 8px 8px 0 0;
+}
+
+.ant-modal-content {
+  border-radius: 8px;
+}
+
+/* Form Styling */
+.ant-form-item-label > label {
+  font-weight: 500;
+  color: #262626;
+}
+
+.ant-input,
+.ant-select-selector,
+.ant-picker {
+  border-radius: 6px;
+}
+
+.ant-input:focus,
+.ant-select-focused .ant-select-selector,
+.ant-picker:hover,
+.ant-picker-focused {
+  border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* Button Styling */
+.ant-btn {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.ant-btn-primary {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  border: none;
+  box-shadow: 0 2px 8px rgba(79, 172, 254, 0.3);
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  box-shadow: 0 4px 12px rgba(79, 172, 254, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Tag Styling */
+.ant-tag {
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+}
+
+/* Empty State Styling */
+.ant-empty {
+  margin: 40px 0;
+}
+
+.ant-empty-description {
+  color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .budget-manager,
+  .goals-manager {
+    padding: 0 8px;
+  }
+  
+  .budget-card,
+  .goal-card {
+    margin-bottom: 16px;
+  }
+  
+  .budget-header h4,
+  .goal-header h4 {
+    font-size: 14px;
+  }
+  
+  .ant-modal {
+    margin: 16px;
+    max-width: calc(100vw - 32px);
+  }
+}
+
+@media (max-width: 576px) {
+  .budget-card .ant-card-actions,
+  .goal-card .ant-card-actions {
+    flex-direction: column;
+  }
+  
+  .budget-card .ant-card-actions > li,
+  .goal-card .ant-card-actions > li {
+    width: 100%;
+    margin: 4px 0;
+  }
+  
+  .ant-row {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+  
+  .ant-col {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+/* Animation for completed goals */
+@keyframes celebration {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.goal-card.completed {
+  animation: celebration 0.6s ease-in-out;
+}
+
+/* Custom scrollbar for modals */
+.ant-modal-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.ant-modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.ant-modal-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.ant-modal-body::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Loading states */
+.ant-card-loading .ant-card-body {
+  user-select: none;
+}
+
+.ant-skeleton-content .ant-skeleton-title,
+.ant-skeleton-content .ant-skeleton-paragraph > li {
+  background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 50%, #f2f2f2 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Hover effects for interactive elements */
+.budget-card .ant-progress,
+.goal-card .ant-progress {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.budget-card:hover .ant-progress-bg,
+.goal-card:hover .ant-progress-bg {
+  box-shadow: 0 0 8px rgba(24, 144, 255, 0.3);
+}
+
+/* Success states */
+.success-glow {
+  box-shadow: 0 0 20px rgba(82, 196, 26, 0.3);
+  border: 1px solid rgba(82, 196, 26, 0.5);
+}
+
+/* Warning states */
+.warning-glow {
+  box-shadow: 0 0 20px rgba(250, 173, 20, 0.3);
+  border: 1px solid rgba(250, 173, 20, 0.5);
+}
+
+/* Error states */
+.error-glow {
+  box-shadow: 0 0 20px rgba(255, 77, 79, 0.3);
+  border: 1px solid rgba(255, 77, 79, 0.5);
+}

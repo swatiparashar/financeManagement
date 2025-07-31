@@ -1,0 +1,148 @@
+/* Analytics Component Styles */
+.analytics {
+  padding: 0;
+}
+
+.analytics-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.analytics-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.analytics-card .ant-card-head-title {
+  font-weight: 600;
+  color: #262626;
+}
+
+.summary-item {
+  text-align: center;
+}
+
+.summary-item h4 {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.summary-details {
+  margin-bottom: 20px;
+}
+
+.summary-details p {
+  margin: 8px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.progress-bars {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.category-analysis {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.category-card {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.category-card:hover {
+  background: #f0f0f0;
+}
+
+.category-card:last-child {
+  margin-bottom: 0;
+}
+
+/* Chart Container Styles */
+.analytics-card canvas {
+  max-height: 400px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .progress-bars {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .summary-item h4 {
+    font-size: 16px;
+  }
+
+  .analytics-card canvas {
+    max-height: 300px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .analytics {
+    padding: 0 8px;
+  }
+
+  .category-card {
+    padding: 8px;
+  }
+
+  .summary-details p {
+    font-size: 12px;
+  }
+}
+
+/* Custom Scrollbar for Category Analysis */
+.category-analysis::-webkit-scrollbar {
+  width: 4px;
+}
+
+.category-analysis::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.category-analysis::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.category-analysis::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Legacy styles for backward compatibility */
+.transactions-count {
+  box-shadow: 0 0 2px grey;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: start;
+}
+
+.analytics h4 {
+  font-size: 20px;
+  text-align: start;
+  color: grey;
+  font-weight: 600;
+}
+.analytics h5 {
+  font-size: 16px;
+  color: grey;
+  text-align: start;
+}
+.category-card {
+  padding: 5px 20px;
+  box-shadow: 0 0 2px grey;
+  margin-top: 15px;
+  border-radius: 10px;
+}

@@ -1,0 +1,243 @@
+/* Dashboard Summary Styles */
+.dashboard-summary {
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+}
+
+.summary-card-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.summary-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.summary-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  pointer-events: none;
+}
+
+/* Progress Card Styles */
+.progress-card .ant-card-head-title {
+  font-weight: 600;
+  color: #262626;
+}
+
+.progress-card .ant-progress-bg {
+  border-radius: 4px;
+}
+
+/* Health Score Card */
+.health-score-card {
+  text-align: center;
+}
+
+.health-score-card .ant-progress-circle .ant-progress-text {
+  font-weight: bold;
+}
+
+/* Recent Transactions Styles */
+.recent-transactions-card .ant-card-head-title {
+  font-weight: 600;
+  color: #262626;
+}
+
+.transaction-item {
+  border-radius: 8px;
+  margin-bottom: 4px;
+  padding: 12px !important;
+  transition: all 0.2s ease;
+}
+
+.transaction-item:hover {
+  background-color: #fafafa !important;
+  border-radius: 8px;
+}
+
+.transaction-item .ant-list-item-meta-avatar {
+  margin-right: 12px;
+}
+
+.transaction-item .ant-avatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quick Actions Styles */
+.quick-actions-card .ant-card-head-title {
+  font-weight: 600;
+  color: #262626;
+}
+
+.quick-action-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-action-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  pointer-events: none;
+}
+
+.quick-action-btn:hover {
+  color: white !important;
+}
+
+.primary-action {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  50% {
+    box-shadow: 0 4px 16px rgba(79, 172, 254, 0.3);
+  }
+  100% {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .summary-card-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .summary-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .quick-action-btn {
+    height: 70px !important;
+  }
+  
+  .quick-action-btn div:first-child {
+    font-size: 18px !important;
+  }
+  
+  .quick-action-btn div:last-child {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-summary .ant-col {
+    margin-bottom: 12px;
+  }
+  
+  .summary-card {
+    margin-bottom: 0;
+  }
+  
+  .transaction-item {
+    padding: 8px !important;
+  }
+  
+  .transaction-item .ant-list-item-meta-title > div {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 8px;
+  }
+  
+  .transaction-item .ant-list-item-meta-description > div {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 4px;
+  }
+}
+
+/* Card Animations */
+.ant-card {
+  transition: all 0.3s ease;
+}
+
+.ant-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+/* Custom Scrollbar for Cards */
+.ant-card-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.ant-card-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.ant-card-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.ant-card-body::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Loading States */
+.ant-skeleton-content .ant-skeleton-title {
+  background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 50%, #f2f2f2 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.ant-skeleton-content .ant-skeleton-paragraph > li {
+  background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 50%, #f2f2f2 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
